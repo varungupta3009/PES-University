@@ -1,0 +1,46 @@
+$date
+	Thu Aug 16 14:46:09 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TB $end
+$var wire 1 ! yy $end
+$var reg 1 " aa $end
+$var reg 1 # bb $end
+$scope module newGate $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1#
+1%
+#10
+0#
+0%
+1"
+1$
+#15
+1!
+1#
+1%
+#20
+0!
+0#
+0%
+0"
+0$

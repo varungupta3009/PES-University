@@ -1,0 +1,8 @@
+1. Cartesian Product
+2. Count Types
+3. Number of Strings, First and Last chars match
+4. Pangram
+5. Reverse each word
+6. Sequence of Whitespaces
+7. Remove all chars except alphas
+8. Mode

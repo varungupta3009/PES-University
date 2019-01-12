@@ -1,0 +1,5 @@
+1. Given two lists (marks and names), WAF to return a tuple containing the highest marks and the corresponding names.
+2. Given a dict where the values are not unique, WAF to create a new dict where the key is value and the value is the concatenated keys of the original dict and return it.
+3. def is_square(x): pass
+   def is_even(x):   pass
+   Find all the numbers between 1 and 100 that are both even and squares.
