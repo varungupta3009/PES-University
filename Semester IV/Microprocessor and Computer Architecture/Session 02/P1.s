@@ -1,0 +1,9 @@
+; Coded by VRG
+
+MOV R0, #05
+MOV R1, #01
+FACT:
+MUL R1, R0, R1
+SUBS R0, R0, #1
+BNE FACT
+SWI 0X011

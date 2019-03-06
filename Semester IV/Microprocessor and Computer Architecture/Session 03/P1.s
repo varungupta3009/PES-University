@@ -1,0 +1,25 @@
+; Program to search a number in an array.
+; Coded by VRG
+
+.TEXT
+
+LDR R0, =A ; ARRAY ADDRESS
+MOV R1, #04; SEARCH ELEMENT
+MOV R2, #05; ARRAY SIZE
+MOV R4, #00; ITERATIVE INDEX
+MOV R9, #-1; FOUND INDEX
+
+LOOP:
+CMP R4, R2
+BEQ EXIT
+LDR R3, [R0], #4
+ADD R4, R4, #1
+CMP R3, R1
+BNE LOOP
+MOV R9, R4
+
+EXIT: SWI 0X011
+
+
+.DATA
+A: .WORD 01, 02, 03, 04, 05

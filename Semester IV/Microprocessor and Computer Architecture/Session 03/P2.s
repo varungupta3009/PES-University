@@ -1,0 +1,23 @@
+; Program to generate an 'n' number Fibonacci Series.
+; Coded by VRG
+
+.TEXT
+
+LDR R0, =A ; SERIES ADDRESS
+MOV R1, #00; N-1th ELEMENT
+MOV R2, #01; N-2th ELEMENT
+MOV R4, #10; NUMBER OF ELEMENTS TO GENERATE
+
+LOOP:
+STR R3, [R0], #4
+SUBS R4, R4, #1
+ADD R3, R1, R2
+MOV R1, R2
+MOV R2, R3
+BNE LOOP
+
+SWI 0X011
+
+
+.DATA
+A: .WORD 00

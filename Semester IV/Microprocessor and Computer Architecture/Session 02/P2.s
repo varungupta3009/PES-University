@@ -1,0 +1,7 @@
+; Coded by VRG
+
+MOVS R0, #00
+MOVMI R1, #2
+MOVPL R1, #1
+MOVEQ R1, #0
+SWI 0X011
