@@ -1,39 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Node {
+typedef struct Node
+{
         int data;
-        struct Node* prev;
-        struct Node* next;
+        struct Node *prev;
+        struct Node *next;
 } Node;
 
-typedef struct {
-        Node* head;
-        Node* tail;
+typedef struct
+{
+        Node *head;
+        Node *tail;
         unsigned int number_of_nodes;
 } DLList;
 
 /* Create a doubly linked list */
-DLList* dllist_create()
+DLList *dllist_create()
 {
-        DLList *newList = (DLList*)malloc(sizeof(DLList));
+        DLList *newList = (DLList *)malloc(sizeof(DLList));
         newList->head = NULL;
         newList->tail = NULL;
         newList->number_of_nodes = 0;
         return newList;
 }
 /* Insert data at the beginning of the list */
-void dllist_insert_beginning(DLList* list, int data)
+void dllist_insert_beginning(DLList *list, int data)
 {
-        Node *newNode = (Node*)malloc(sizeof(Node));
+        Node *newNode = (Node *)malloc(sizeof(Node));
         newNode->data = data;
         newNode->prev = NULL;
         newNode->next = list->head;
 
-
         (list->number_of_nodes)++;
 
-        if(list->number_of_nodes == 1)
+        if (list->number_of_nodes == 1)
                 list->tail = newNode;
 
         else
@@ -42,12 +43,12 @@ void dllist_insert_beginning(DLList* list, int data)
         list->head = newNode;
 }
 /* Insert 'data' into the 'list', before object at 'index', where 0 <= 'index' < number_of_nodes, for a non-empty list */
-void dllist_insert_at(DLList* list, int data, int index)
+void dllist_insert_at(DLList *list, int data, int index)
 {
         if (index < 0 || index > list->number_of_nodes)
                 return;
 
-        Node *newNode = (Node*)malloc(sizeof(Node));
+        Node *newNode = (Node *)malloc(sizeof(Node));
         newNode->data = data;
 
         if (!(index))
@@ -66,18 +67,17 @@ void dllist_insert_at(DLList* list, int data, int index)
         {
                 int i = 0;
                 Node *cur;
-                for(cur = list->head; cur != NULL && i < index; cur = cur->next, i++);
+                for (cur = list->head; cur != NULL && i < index; cur = cur->next, i++)
+                        ;
                 newNode->next = cur;
                 newNode->prev = cur->prev;
                 cur->prev->next = newNode;
                 cur->prev = newNode;
                 (list->number_of_nodes)++;
         }
-
-
 }
 /* Removes last element of a non-empty list */
-void dllist_delete_rear(DLList* list)
+void dllist_delete_rear(DLList *list)
 {
         if (list->head == NULL)
                 return;
@@ -101,19 +101,20 @@ void dllist_delete_rear(DLList* list)
         }
 }
 /* Removes an element at specified 'index', where 0 <= 'index' < number_of_nodes, for a non-empty list */
-void dllist_delete_at(DLList* list, int index)
+void dllist_delete_at(DLList *list, int index)
 {
         if (index < 0 || index >= list->number_of_nodes || list->head == NULL)
                 return;
 
-        if (list->number_of_nodes == 1 || index == list->number_of_nodes-1)
+        if (list->number_of_nodes == 1 || index == list->number_of_nodes - 1)
                 dllist_delete_rear(list);
 
         else
         {
                 int i = 0;
                 Node *cur;
-                for(cur = list->head; i < index; cur = cur->next, i++);
+                for (cur = list->head; i < index; cur = cur->next, i++)
+                        ;
 
                 if (index > 0)
                         cur->prev->next = cur->next;
@@ -126,10 +127,10 @@ void dllist_delete_at(DLList* list, int index)
         }
 }
 /* Print list contents */
-void dllist_print(DLList* list)
+void dllist_print(DLList *list)
 {
         Node *cur;
-        for(cur = list->head; cur != NULL; cur = cur->next)
+        for (cur = list->head; cur != NULL; cur = cur->next)
                 printf("%d ", cur->data);
         putchar('\n');
 }
@@ -137,18 +138,21 @@ void dllist_print(DLList* list)
 void dllist_destroy(DLList **list)
 {
         Node *cur;
-        for(cur = (*list)->head; cur != NULL; cur = cur->next)
+        for (cur = (*list)->head; cur != NULL; cur = cur->next)
                 free(cur);
         free(*list);
 }
-int main() {
+int main()
+{
         unsigned int choice = 0;
         int element;
         int position;
         DLList *list = dllist_create();
-        while(choice < 5) {
+        while (choice < 5)
+        {
                 scanf("%d", &choice);
-                switch(choice) {
+                switch (choice)
+                {
                 case 0:
                         /* Insert in the beginning */
                         scanf("%d", &element);
