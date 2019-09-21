@@ -1,4 +1,4 @@
-/* 4_spiralMatrix.c [L3P4F1] */
+/* 3__spiral_matrix.c [L3P4F1] */
 
 #include <stdio.h>
 
@@ -16,42 +16,58 @@ int main()
         direc = 'U';
         int n = row * col, l = 0, RR = 0, DC = col - 1, LR = row - 1, UC = 0, r, c, i, j;
 
-        while (l != n) {
-                if (direc == 'U') {
+        while (l != n)
+        {
+                if (direc == 'U')
+                {
                         r = RR;
                         RR++;
-                        for (c = 0; c < col; c++) {
-                                if (!a[r][c]) {
+                        for (c = 0; c < col; c++)
+                        {
+                                if (!a[r][c])
+                                {
                                         a[r][c] = l + 1;
                                         l++;
                                 }
                         }
                         direc = 'R';
-                } else if (direc == 'R') {
+                }
+                else if (direc == 'R')
+                {
                         c = DC;
                         DC--;
-                        for (r = 0; r < row; r++) {
-                                if (!a[r][c]) {
+                        for (r = 0; r < row; r++)
+                        {
+                                if (!a[r][c])
+                                {
                                         a[r][c] = l + 1;
                                         l++;
                                 }
                         }
                         direc = 'D';
-                } else if (direc == 'D') {
+                }
+                else if (direc == 'D')
+                {
                         r = LR;
                         LR--;
-                        for (c = col - 1; c > -1; c--) {
-                                if (!a[r][c]) {
+                        for (c = col - 1; c > -1; c--)
+                        {
+                                if (!a[r][c])
+                                {
                                         a[r][c] = l + 1;
                                         l++;
                                 }
                         }
                         direc = 'L';
-                } else if (direc == 'L') {
+                }
+                else if (direc == 'L')
+                {
                         c = UC;
                         UC++;
-                        for (r = row - 1; r > -1; r--) {
-                                if (!a[r][c]) {
+                        for (r = row - 1; r > -1; r--)
+                        {
+                                if (!a[r][c])
+                                {
                                         a[r][c] = l + 1;
                                         l++;
                                 }
@@ -60,7 +76,8 @@ int main()
                 }
         }
 
-        for (i = 0; i < row; i++) {
+        for (i = 0; i < row; i++)
+        {
                 for (j = 0; j < col; j++)
                         printf("%d\t", a[i][j]);
                 printf("\n");

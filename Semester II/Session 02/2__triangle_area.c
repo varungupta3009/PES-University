@@ -1,7 +1,7 @@
-/* 1.c [L2P2F1] */
+/* 2__triangle_area.c [L2P3F1] */
 
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 
 int main(void)
 
@@ -11,8 +11,8 @@ int main(void)
 	double A;
 	printf("\nInput the 3 sides:\n\n");
 	scanf("%f %f %f", &a, &b, &c);
-	s = (a+b+c)/2;
-	A = sqrt(s*(s-a)*(s-b)*(s-c));
+	s = (a + b + c) / 2;
+	A = sqrt(s * (s - a) * (s - b) * (s - c));
 	printf("\nArea of the Triangle: %f\n\n", A);
 	return 0.0;
 }

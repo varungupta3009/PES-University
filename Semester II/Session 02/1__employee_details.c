@@ -1,6 +1,6 @@
-/* 1.c [L2P2F1] */
+/* 1__employee_details.c [L2P2F1] */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main(void)
 

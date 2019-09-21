@@ -1,4 +1,4 @@
-/* 3_Pattern.c [L3P3F1] */
+/* 2__print_pattern.c [L3P3F1] */
 
 #include <stdio.h>
 
@@ -22,7 +22,6 @@ int main()
                 for (j = 1; j <= i; j++)
                 {
                         printf("%d + ", j);
-
                 }
                 s += i;
                 printf("\b\b");

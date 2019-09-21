@@ -1,6 +1,6 @@
 /* first.c [L1P1F1] */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 
