@@ -11,7 +11,7 @@ a = ''
 b = [0, 1]
 c = ''
 for i in range(1000):
-    a += 'All work and no play makes Jack a dull boy\n'
+    a += 'All work and no play makes Jack a dull boy.\n'
 
 for i in range(998):
     b.append(b[-1]+b[-2])
