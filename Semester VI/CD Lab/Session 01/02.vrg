@@ -1,0 +1,27 @@
+%{
+#include<iostream>
+int vowels = 0;
+int consonants = 0;
+int digits = 0;
+%}
+
+%%
+
+[aeiouAEIOU] vowels++;
+[A-Za-z] consonants++;
+[0-9] digits++;
+. ;
+[\n] {
+        printf("No. of vowels = %d\n", vowels);
+        printf("No. of consonants = %d\n", consonants);
+        printf("No. of digits = %d\n", digits);
+        exit(0);
+     }
+
+%%
+
+int main()
+{
+    yylex();
+    return 0;
+}

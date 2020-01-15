@@ -1,0 +1,40 @@
+%{
+#include<iostream>
+int keywords = 0;
+int identifiers = 0;
+int spaces = 0;
+int tabs = 0;
+int arithmetic = 0;
+int relational = 0;
+int logical = 0;
+%}
+
+%%
+
+"int"|"float"|"char"|"for"|"while" keywords++;
+[a-zA-Z_][a-zA-Z0-9_]* identifiers++;
+\t tabs++;
+[ ] spaces++;
+"="|"\+"|"-"|"\*"|"/"|"\+\+"|"--" arithmetic++;
+"=="|"<="|"=>"|"<"|">" relational++;
+"&&"|"||" logical++;
+. ;
+[\n] {
+        printf("No. of keywords = %d\n", keywords);
+        printf("No. of identifiers = %d\n", identifiers);
+        printf("No. of tokens = %d\n", keywords + identifiers);
+        printf("No. of spaces = %d\n", spaces);
+        printf("No. of tabs = %d\n", tabs);
+        printf("No. of arithmetic = %d\n", arithmetic);
+        printf("No. of relational = %d\n", relational);
+        printf("No. of logical = %d\n", logical);
+        exit(0);
+     }
+
+%%
+
+int main()
+{
+    yylex();
+    return 0;
+}

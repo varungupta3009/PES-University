@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main</title>
+</head>
+<body>
+    <form action="add.php" method="POST" target="_blank">
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name" placeholder="John Doe" required><br><br>
+        <label for="sem">Semester</label><br>
+        <input type="number" name="sem" id="sem" placeholder="6" min="1" max="8" required><br><br>
+        <label for="SRN">SRN</label><br>
+        <input type="text" name="SRN" id="SRN" placeholder="PES1201700000" pattern="PES\d{10}" required><br><br>
+        <button>Add</button>
+    </form>
+    <br><br>
+    <form action="view.php" method="POST" target="_blank">
+        <label for="SRN">SRN</label><br>
+        <input type="text" name="SRN" id="SRN" placeholder="PES1201700000" pattern="PES\d{10}" required><br><br>
+        <button>View</button>
+    </form>
+</body>
+</html>
